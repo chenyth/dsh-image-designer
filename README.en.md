@@ -1,4 +1,4 @@
-# Shenhuo Image Designer for DSH
+# Image Designer
 
 [简体中文](README.md)
 
@@ -23,6 +23,8 @@ Restart that CLI profile after installation. Electron-managed profiles must use 
 ## Use
 
 Invoke `/shenhuo-designers` or ask to use Shenhuo Image Designer. On first use, open the link returned by `shenhuo_connect` in a browser on the same computer as DSH. Log into or [register for Shenhuo](https://www.shenhuoai.com/register), authorize, then return to DSH and say you have authorized. The plugin verifies your account and discovers the live MCP tool schemas.
+
+The plugin's display name and description follow DSH's interface language: **Image Designer** in English and **神火设计师** in Chinese. Change DSH's language in **Settings → General → Language**. Other languages use DSH's fallback rules. The technical package name remains `dsh-image-designer`.
 
 Example: “Use Shenhuo Image Designer to design product images from products/coffee.png. Keep the brand name Mountain Coffee. Match a suitable designer first, then show me the proposal and quote.”
 

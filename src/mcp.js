@@ -20,7 +20,7 @@ export class McpConnection {
     if (this.client) return;
     if (this.connecting) return this.connecting;
     this.connecting = (async () => {
-      const client = new Client({ name: 'dsh-image-designer', version: '0.1.0' });
+      const client = new Client({ name: 'dsh-image-designer', version: '0.1.1' });
       const transport = new StreamableHTTPClientTransport(new URL(this.session.resource), { fetch: (url, options) => this.session.authenticatedFetch(url, options) });
       try {
         await client.connect(transport, { timeout: 30_000 });

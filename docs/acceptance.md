@@ -9,6 +9,7 @@ Date: 2026-10-31. Results refer to this plugin, not other Shenhuo channels.
 | Original file bytes | Local fixture: upload hash, no OAuth on tickets, unique output names, workspace containment | Passed |
 | Production upload | Re-uploaded the fictional delivered poster as an authorized reference; service receipt SHA-256 matches original bytes | Passed |
 | DSH service integration | Published DSH 0.2.1-rc.5 Cordis tools and skills services accept this plugin | Passed |
+| Localized display metadata | DSH 0.2.1-rc.5 readPluginMeta reads locale resources as 神火设计师 / Image Designer with separate Chinese and English introductions | Passed |
 | Public OAuth discovery | Official production discovery metadata available, no paid call | Passed |
 | DSH Desktop installation | macOS DSH 0.2.1-rc.5, installed and enabled through Desktop plugin manager | Passed |
 | First personal OAuth and live tool discovery | Browser consent via plugin OAuth client; DSH status and live directory tools verified | Passed |

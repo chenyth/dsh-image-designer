@@ -1,4 +1,4 @@
-# 神火图片设计师 · dsh-image-designer
+# 神火设计师 · Image Designer
 
 [English](README.en.md)
 
@@ -51,13 +51,13 @@ dsh plugin --profile web add github:chenyth/dsh-image-designer
 ## 开始使用
 
 1. 还没有神火账号，先[注册神火 AI](https://www.shenhuoai.com/register)。新账号赠送积分以实际账户回执为准。
-2. 在 DSH 输入 `/shenhuo-designers`，或说“使用神火图片设计师”。首次使用时打开 `shenhuo_connect` 返回的链接，在运行 DSH 的同一台电脑浏览器内登录并授权。
+2. 在 DSH 输入 `/shenhuo-designers`，或说“使用神火设计师”。首次使用时打开 `shenhuo_connect` 返回的链接，在运行 DSH 的同一台电脑浏览器内登录并授权。
 3. 返回 DSH 回复“已授权”，插件会核验账号、加载业务工具并继续需求。
 
 示例：
 
 ```text
-使用神火图片设计师，用工作区 products/coffee.png 设计一组咖啡电商主图。
+使用神火设计师，用工作区 products/coffee.png 设计一组咖啡电商主图。
 品牌名“山间咖啡”，突出低温烘焙和坚果风味，请先匹配合适的设计师。
 ```
 
@@ -69,6 +69,10 @@ dsh plugin --profile web add github:chenyth/dsh-image-designer
 匹配与提案可能消费个人积分，提交需求后执行。生图另行展示有效报价，你确认后才提交。默认规格和张数由神火设计师解析；明确数量或规格请写在原始需求中。
 
 积分不足时，使用当前绑定的同一账号[在官网充值](https://www.shenhuoai.com/home/recharge)，回来回复“已充值，继续生成”。插件核验余额、恢复原项目并重新报价，不重复建项。
+
+## 界面语言
+
+插件名称和介绍跟随 DSH 的界面语言：中文显示“神火设计师”，英文显示“Image Designer”。在 DSH 的“设置 → 通用 → 语言”中切换，名称和介绍会使用对应语言；其他语言按 DSH 的语言回退规则显示。技术包名始终为 `dsh-image-designer`。
 
 ## 文件与任务恢复
 
