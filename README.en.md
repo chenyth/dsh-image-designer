@@ -4,6 +4,10 @@
 
 Commission Shenhuo AI image designers from **DeepSeek Harness**, using your personal Shenhuo account and credits. Submit your original brief and materials, choose a matched designer, answer necessary questions, review the proposal and quote, then approve image generation and download the results.
 
+![Actual delivered book-club poster](docs/book-club-demo.png)
+
+This fictional book-club poster was delivered through the plugin's live MCP client (1344×1792, Pro / 1.5K). DSH Desktop separately verified recovery, download, and image display. Separate service receipts report 20 proposal credits and 50 generation credits for this sample; future tasks use their own current quotes.
+
 ## Install
 
 Requires compatible DSH versions starting at `0.2.1-rc.5`, Node.js `24.9+`, and a local workspace. Marketplace submission to [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) is being prepared; listing and installation are separate steps.

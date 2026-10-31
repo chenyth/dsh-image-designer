@@ -24,15 +24,15 @@ export class McpConnection {
       const transport = new StreamableHTTPClientTransport(new URL(this.session.resource), { fetch: (url, options) => this.session.authenticatedFetch(url, options) });
       try {
         await client.connect(transport, { timeout: 30_000 });
-        const tools = []; let cursor;
-        do { const page = await client.listTools(cursor ? { cursor } : {}); tools.push(...page.tools); cursor = page.nextCursor; if (tools.length > 100) throw new Error('Unexpected MCP tool catalogue.'); } while (cursor);
+        const tools = []; let cursor; const cursors = new Set();
+        do { const page = await client.listTools(cursor ? { cursor } : {}); tools.push(...page.tools); cursor = page.nextCursor; if (tools.length > 100 || (cursor && cursors.has(cursor))) throw new Error('Unexpected MCP tool catalogue.'); if (cursor) cursors.add(cursor); } while (cursor);
         this.definitions = tools.filter(tool => BUSINESS_TOOLS.has(tool.name));
         const account = resultValue(await client.callTool({ name: 'get_account', arguments: {} }));
         if (!account.user?.id) throw new Error('Shenhuo did not return an authorized personal account.');
         this.userId = account.user.id;
         this.client = client; this.transport = transport;
         this.onTools?.(this.definitions);
-      } catch (error) { await client.close().catch(() => {}); throw error; }
+      } catch (error) { this.client = null; this.transport = null; await client.close().catch(() => {}); throw error; }
     })();
     try { await this.connecting; } finally { this.connecting = null; }
   }
@@ -85,7 +85,9 @@ export class McpConnection {
   async resume() {
     await this.connect();
     const journal = await this.store.read('tasks.json');
-    return { account_id: this.userId, operations: (journal?.operations ?? []).filter(op => op.user_id === this.userId), message: 'These are saved operation records, not live task status or new charges. Query each original task ID with its recorded kind. Replay an unknown write only with its original parameters and key.' };
+    const observedAt = new Date().toISOString();
+    const operations = (journal?.operations ?? []).filter(op => op.user_id === this.userId).map(op => op.tool === 'get_result' ? { ...op, ticket_expired_at_observation: Number.isFinite(Date.parse(op.expires_at)) ? Date.parse(op.expires_at) <= Date.parse(observedAt) : null } : op);
+    return { account_id: this.userId, observed_at: observedAt, operations, message: 'These are saved operation records, not live task status or new charges. Query each original task ID with its recorded kind. A get_result status of pending means a file ticket was issued; it does not mean expired or generation pending. Use ticket_expired_at_observation for expiration at observed_at; null means unknown. Replay an unknown write only with its original parameters and key.' };
   }
   async dispose() { const client = this.client; this.client = null; this.transport = null; if (client) await client.close().catch(() => {}); }
 }
