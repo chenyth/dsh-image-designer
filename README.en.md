@@ -10,7 +10,7 @@ This fictional book-club poster was delivered through the plugin's live MCP clie
 
 ## Install
 
-Requires compatible DSH versions starting at `0.2.1-rc.5`, Node.js `24.9+`, and a local workspace. Marketplace submission to [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) is being prepared; listing and installation are separate steps.
+Requires compatible DSH versions starting at `0.2.1-rc.5`, Node.js `24.9+`, and a local workspace. [Marketplace submission #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821) is awaiting review and the new-repository age gate; listing and installation are separate steps.
 
 In DSH Desktop, open **Plugins → Add plugin**, enter `github:chenyth/dsh-image-designer`, install, and enable it. CLI profiles can use:
 

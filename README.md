@@ -30,7 +30,7 @@
 
 要求：DSH `0.2.1-rc.5` 起的兼容版本，Node.js `24.9+`。使用本机 DSH；远程／SSH 工作区不在首版文件传输支持范围内。
 
-**从插件市场安装**：本项目正在准备向 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 投稿。收录并更新目录后，可在使用该目录的市场中搜索“神火”或 `dsh-image-designer`。尚未收录时请使用下面的直接安装方式。
+**从插件市场安装**：已向 [awesome-dsh-plugin 提交收录 PR #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821)，目前等待审核及新仓库年龄门槛。收录并更新目录后，可在使用该目录的市场中搜索“神火”或 `dsh-image-designer`。尚未收录时请使用下面的直接安装方式。
 
 **DSH 桌面版**：打开“插件 → 添加插件”，输入：
 
