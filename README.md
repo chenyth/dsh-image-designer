@@ -74,6 +74,8 @@ dsh plugin --profile web add github:chenyth/dsh-image-designer
 
 插件名称和介绍跟随 DSH 的界面语言：中文显示“神火设计师”，英文显示“Image Designer”。在 DSH 的“设置 → 通用 → 语言”中切换，名称和介绍会使用对应语言；其他语言按 DSH 的语言回退规则显示。技术包名始终为 `dsh-image-designer`。
 
+![中文插件名称和介绍](docs/dsh-plugin-zh.png)
+
 ## 文件与任务恢复
 
 素材放在当前**本地工作区**内；插件以原始字节上传并核对哈希。工作区外的文件先复制到工作区。下载默认保存到 `shenhuo-images/`，已有同名文件会保留并加序号，成功后返回真实绝对路径和 SHA-256。远程服务器不能直接读取你电脑上的路径。
