@@ -11,6 +11,7 @@ Date: 2026-10-31. Results refer to this plugin, not other Shenhuo channels.
 | DSH service integration | Published DSH 0.2.1-rc.5 Cordis tools and skills services accept this plugin | Passed |
 | Localized display metadata | DSH 0.2.1-rc.5 readPluginMeta reads locale resources as 神火设计师 / Image Designer with separate Chinese and English introductions | Passed |
 | Desktop language switching | Installed v0.1.1 Release tarball; actual plugin heading and introduction switch between Chinese and English in DSH General settings; restored Chinese after verification | Passed |
+| Transparent brand icon | Installed and enabled v0.1.2 Release tarball on the same macOS DSH; official red flame appears in the native icon container. Source PNG is 512×512 RGBA with transparent corners | Passed |
 | Public OAuth discovery | Official production discovery metadata available, no paid call | Passed |
 | DSH Desktop installation | macOS DSH 0.2.1-rc.5, installed and enabled through Desktop plugin manager | Passed |
 | First personal OAuth and live tool discovery | Browser consent via plugin OAuth client; DSH status and live directory tools verified | Passed |

@@ -74,7 +74,9 @@ dsh plugin --profile web add github:chenyth/dsh-image-designer
 
 插件名称和介绍跟随 DSH 的界面语言：中文显示“神火设计师”，英文显示“Image Designer”。在 DSH 的“设置 → 通用 → 语言”中切换，名称和介绍会使用对应语言；其他语言按 DSH 的语言回退规则显示。技术包名始终为 `dsh-image-designer`。
 
-![中文插件名称和介绍](docs/dsh-plugin-zh.png)
+图标使用神火官方红色火焰和透明背景，留白适配 DSH 原生图标容器。
+
+![中文插件名称、介绍和透明红色火焰图标](docs/dsh-plugin-red-flame.png)
 
 ## 文件与任务恢复
 
