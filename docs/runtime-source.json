@@ -1,0 +1,10 @@
+{
+  "source": "ShenhuoAI plugin-mcp shared runtime templates",
+  "version": "0.1.0",
+  "sha256": {
+    "runtime-skill.md.tmpl": "2b972e7161577ea1bc1eadb421bbb9d09964bb1fcd313a27d6097942d1f43e46",
+    "examples.md": "4a8602a1f003e43d3c5acd9bb3c7e1fa773cb48214002b09246c3af0368b2d6c",
+    "files.md": "589e56df6cea10d860d51253ec182fffc067f8ebe5f431fe41879a21d02d3090",
+    "tools.md": "3fda71ffb64dcc52e847d10949b571ccb456e3452cd8e08c9adbd57f183afcd5"
+  }
+}

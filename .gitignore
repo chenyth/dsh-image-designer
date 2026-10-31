@@ -1,0 +1,9 @@
+node_modules/
+*.tgz
+coverage/
+.env*
+.DS_Store
+artifacts/
+.private/
+auth.json
+tasks.json
