@@ -4,7 +4,7 @@
 
 在 **DeepSeek Harness（DSH）** 中委托神火 AI 设计师完成图片设计。使用神火个人账号 OAuth 和个人积分，从需求与素材开始，经过设计师匹配、必要追问、设计提案和报价确认，生成并下载作品。
 
-![神火 AI](assets/icon.png)
+![神火 AI](assets/icon-red-transparent.png)
 
 ## 可以做什么
 

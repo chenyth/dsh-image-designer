@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 — 2026-10-31
+
+- Use the official red flame on a transparent background, matching DSH's standalone plugin icon presentation.
+- Ship the original 512px brand asset at a new icon path so installed clients and storefronts refresh it.
+
 ## 0.1.1 — 2026-10-31
 
 - Add DSH-native localized display metadata: 神火设计师 in Chinese and Image Designer in English, each with its own introduction.

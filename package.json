@@ -1,11 +1,11 @@
 {
   "name": "dsh-image-designer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Connect to Shenhuo AI designers for image design, with material uploads, designer matching, proposals, credit quote confirmation, image generation and downloads.",
   "type": "module",
   "main": "src/index.js",
   "exports": { ".": "./src/index.js", "./package.json": "./package.json", "./locale/*.json": "./locale/*.json" },
-  "files": ["src", "skills", "locale/*.json", "assets/icon.png", "docs", "screenshots.json", "cordis.patch.yml", "README.md", "README.en.md", "LICENSE"],
+  "files": ["src", "skills", "locale/*.json", "assets/icon-red-transparent.png", "docs", "screenshots.json", "cordis.patch.yml", "README.md", "README.en.md", "LICENSE"],
   "scripts": {
     "test": "node --test test/*.test.js",
     "check": "node --check src/index.js && node --check src/oauth.js && node --check src/mcp.js && node --check src/files.js",
@@ -21,6 +21,6 @@
   "repository": { "type": "git", "url": "git+https://github.com/chenyth/dsh-image-designer.git" },
   "bugs": { "url": "https://github.com/chenyth/dsh-image-designer/issues" },
   "homepage": "https://github.com/chenyth/dsh-image-designer#readme",
-  "icon": "./assets/icon.png",
+  "icon": "./assets/icon-red-transparent.png",
   "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
 }
