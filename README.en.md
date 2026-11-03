@@ -10,7 +10,7 @@ This fictional book-club poster was delivered through the plugin's live MCP clie
 
 ## Install
 
-Requires compatible DSH versions starting at `0.2.1-rc.5`, Node.js `24.9+`, and a local workspace. [Marketplace submission #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821) is awaiting review and the new-repository age gate; listing and installation are separate steps.
+Requires compatible DSH versions starting at `0.2.1-rc.5`, Node.js `24.9+`, and a local workspace. [Marketplace submission #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821) was merged on November 1, 2026. The marketplace's pinned package can lag behind GitHub Releases; use the release asset for the version you need.
 
 In DSH Desktop, open **Plugins → Add plugin**, enter `github:chenyth/dsh-image-designer`, install, and enable it. CLI profiles can use:
 
@@ -56,3 +56,7 @@ npm pack
 Plain ESM runs without install-time builds. `doctor` checks OAuth discovery and, when authorized, account and tool discovery without paid design calls. The shared runtime contract is rendered from Shenhuo’s `plugin-mcp` templates; source hashes are recorded in [runtime-source.json](docs/runtime-source.json).
 
 [Shenhuo AI](https://www.shenhuoai.com) · [Issues](https://github.com/chenyth/dsh-image-designer/issues) · [MIT License](LICENSE)
+
+## Shared connection for Image Editor
+
+Version `0.1.3` provides an in-process connection interface for [dsh-image-editor 0.2.0](https://github.com/chenyth/dsh-image-editor). The companion reuses the original personal OAuth session without copying credentials or creating another login. The original 12 designer tools remain unchanged. Shared calls are limited to account, upload and layer operations; quote confirmation, task recovery and file delivery remain the editor's responsibility. Newly published scopes refresh the existing grant first.

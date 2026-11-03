@@ -18,7 +18,7 @@ Date: 2026-10-31. Results refer to this plugin, not other Shenhuo channels.
 | Paid design workflow | Same plugin MCP client: proposal → valid quote → explicit 50-credit approval → generation → original-byte download | Passed at protocol boundary |
 | DSH recovery and delivery | DSH model loaded the Skill, read original operation records, queried the completed generation, downloaded and displayed its image in the local workspace | Passed |
 | Windows | No Windows device evidence | Not yet verified |
-| Marketplace | [Submission PR #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821), one entry only; repo eligible for one-day age gate on 2026-11-01 at 05:57:26 UTC | Submitted, external review pending |
+| Marketplace | [Submission PR #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821), one entry only | Merged on 2026-11-01; later tarball updates require a separate catalog update |
 
 Automated protocol tests do not prove that a model follows the entire runtime Skill. Marketplace listing requires external review and does not install the plugin for every user.
 

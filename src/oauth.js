@@ -120,7 +120,7 @@ export class OAuthSession {
     const token = await this.accessToken();
     const send = value => { const headers = new Headers(options.headers); headers.set('authorization', `Bearer ${value}`); return this.fetch(url, { ...options, headers, redirect: 'error' }); };
     let response = await send(token);
-    if (response.status === 401) { await response.body?.cancel(); response = await send(await this.accessToken(true, token)); }
+    if (response.status === 401 || (response.status === 403 && /insufficient_scope/.test(response.headers.get('www-authenticate') ?? ''))) { await response.body?.cancel(); response = await send(await this.accessToken(true, token)); }
     return response;
   }
   async disconnect() {

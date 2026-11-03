@@ -5,6 +5,7 @@ import { PrivateStore } from './store.js';
 import { OAuthSession } from './oauth.js';
 import { McpConnection } from './mcp.js';
 import { FileTransfers } from './files.js';
+import { sharedConnection } from './shared.js';
 
 export const name = 'dsh-image-designer';
 export const inject = ['tools', 'skills'];
@@ -28,6 +29,7 @@ export async function apply(ctx, config = {}) {
   const store = new PrivateStore(config.dataDir);
   const session = new OAuthSession(store);
   const remote = new McpConnection(session, store);
+  ctx.provide('shenhuoMcpConnection', sharedConnection(session, remote));
   const files = new FileTransfers(remote);
   const disposeTools = []; let remoteDisposers = []; let disposed = false;
   const register = tool => { const off = ctx.tools.register(tool); disposeTools.push(off); };

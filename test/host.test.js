@@ -10,6 +10,7 @@ test('DSH registers an invocable bundled skill and six bootstrap tools without r
   const directory = await mkdtemp(join(tmpdir(), 'dsh-plugin-'));
   const tools = new Map(); const skills = new Map(); const effects = [];
   const ctx = {
+    provide(name, value) { assert.equal(name, 'shenhuoMcpConnection'); assert.equal(value.apiVersion, 1); },
     tools: { register(tool) { assert(tool.output.schema); assert.equal(tool.parameters.type, 'object'); if (tools.has(tool.name)) throw new Error('duplicate'); tools.set(tool.name, tool); return () => tools.delete(tool.name); } },
     skills: { register(skill) { skills.set(skill.name, skill); return () => skills.delete(skill.name); } },
     effect(factory) { effects.push(factory()); },

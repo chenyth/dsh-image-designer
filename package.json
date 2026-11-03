@@ -1,26 +1,63 @@
 {
   "name": "dsh-image-designer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Connect to Shenhuo AI designers for image design, with material uploads, designer matching, proposals, credit quote confirmation, image generation and downloads.",
   "type": "module",
   "main": "src/index.js",
-  "exports": { ".": "./src/index.js", "./package.json": "./package.json", "./locale/*.json": "./locale/*.json" },
-  "files": ["src", "skills", "locale/*.json", "assets/icon-red-transparent.png", "docs", "screenshots.json", "cordis.patch.yml", "README.md", "README.en.md", "LICENSE"],
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "src",
+    "skills",
+    "locale/*.json",
+    "assets/icon-red-transparent.png",
+    "docs",
+    "screenshots.json",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node --test test/*.test.js",
-    "check": "node --check src/index.js && node --check src/oauth.js && node --check src/mcp.js && node --check src/files.js",
+    "check": "node --check src/index.js && node --check src/oauth.js && node --check src/mcp.js && node --check src/files.js && node --check src/shared.js",
     "doctor": "node src/cli.js doctor",
     "connect": "node src/cli.js connect",
     "prepack": "npm run check"
   },
-  "engines": { "node": ">=24.9.0", "dsh": ">=0.2.1-rc.5 <0.2.2-0 || >=0.2.2-alpha.2 <0.3.0-0" },
-  "dependencies": { "@modelcontextprotocol/sdk": "1.32.2" },
-  "keywords": ["dsh-plugin", "deepseek-harness", "shenhuo", "image-generation", "image-design", "mcp", "oauth"],
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": ">=0.2.1-rc.5 <0.2.2-0 || >=0.2.2-alpha.2 <0.3.0-0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "shenhuo",
+    "image-generation",
+    "image-design",
+    "mcp",
+    "oauth"
+  ],
   "author": "chenyth",
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/chenyth/dsh-image-designer.git" },
-  "bugs": { "url": "https://github.com/chenyth/dsh-image-designer/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenyth/dsh-image-designer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenyth/dsh-image-designer/issues"
+  },
   "homepage": "https://github.com/chenyth/dsh-image-designer#readme",
   "icon": "./assets/icon-red-transparent.png",
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3 — 2026-11-03
+
+- Expose a token-free, same-process Cordis connection capability for dsh-image-editor. The original 12 designer tools remain unchanged.
+- Refresh the existing OAuth grant once for an insufficient_scope challenge, preserving authorization and task records.
+- Verify shared authorization through a real DSH image-editor separation and saved-document PSD delivery; no credentials are copied to the editor.
+
+
 ## 0.1.2 — 2026-10-31
 
 - Use the official red flame on a transparent background, matching DSH's standalone plugin icon presentation.

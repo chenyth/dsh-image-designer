@@ -1,6 +1,7 @@
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 import { createHash } from 'node:crypto';
+import manifest from '../package.json' with { type: 'json' };
 
 export const BUSINESS_TOOLS = new Set(['get_account', 'list_designers', 'get_designer', 'create_upload', 'get_upload', 'match_designer', 'create_design', 'get_task', 'answer_questions', 'quote_images', 'generate_images', 'get_result']);
 const WRITE_TOOLS = new Set(['create_upload', 'match_designer', 'create_design', 'answer_questions', 'quote_images', 'generate_images', 'get_result']);
@@ -20,12 +21,13 @@ export class McpConnection {
     if (this.client) return;
     if (this.connecting) return this.connecting;
     this.connecting = (async () => {
-      const client = new Client({ name: 'dsh-image-designer', version: '0.1.2' });
+      const client = new Client({ name: manifest.name, version: manifest.version });
       const transport = new StreamableHTTPClientTransport(new URL(this.session.resource), { fetch: (url, options) => this.session.authenticatedFetch(url, options) });
       try {
         await client.connect(transport, { timeout: 30_000 });
         const tools = []; let cursor; const cursors = new Set();
         do { const page = await client.listTools(cursor ? { cursor } : {}); tools.push(...page.tools); cursor = page.nextCursor; if (tools.length > 100 || (cursor && cursors.has(cursor))) throw new Error('Unexpected MCP tool catalogue.'); if (cursor) cursors.add(cursor); } while (cursor);
+        this.allDefinitions = tools;
         this.definitions = tools.filter(tool => BUSINESS_TOOLS.has(tool.name));
         const account = resultValue(await client.callTool({ name: 'get_account', arguments: {} }));
         if (!account.user?.id) throw new Error('Shenhuo did not return an authorized personal account.');

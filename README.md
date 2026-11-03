@@ -30,7 +30,7 @@
 
 要求：DSH `0.2.1-rc.5` 起的兼容版本，Node.js `24.9+`。使用本机 DSH；远程／SSH 工作区不在首版文件传输支持范围内。
 
-**从插件市场安装**：已向 [awesome-dsh-plugin 提交收录 PR #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821)，目前等待审核及新仓库年龄门槛。收录并更新目录后，可在使用该目录的市场中搜索“神火”或 `dsh-image-designer`。尚未收录时请使用下面的直接安装方式。
+**从插件市场安装**：[awesome-dsh-plugin 收录 PR #10821](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10821) 已于 2026-11-01 合并，可在使用该目录的市场中搜索“神火”或 `dsh-image-designer`。市场固定的安装包版本可能晚于 GitHub Releases；需要指定版本时使用 Release 中的 `.tgz`。
 
 **DSH 桌面版**：打开“插件 → 添加插件”，输入：
 
@@ -112,3 +112,7 @@ npm pack
 公共流程来自神火主仓库的 `plugin-mcp` 模板，来源摘要在 [runtime-source.json](docs/runtime-source.json)。本仓库维护 DSH 适配代码，公共流程更新由主仓库渲染后同步。
 
 [神火 AI 官网](https://www.shenhuoai.com) · [问题反馈](https://github.com/chenyth/dsh-image-designer/issues) · [MIT License](LICENSE)
+
+## 图层编辑器连接复用
+
+`0.1.3` 为 [dsh-image-editor 0.2.0](https://github.com/chenyth/dsh-image-editor) 提供进程内连接共享接口。图层插件复用本插件管理的个人 OAuth，不复制 Token、不新增另一套登录；本插件原有设计工具与流程保持。共享接口只允许账号、上传与图层工具，图层报价、任务恢复和文件交付由图层插件实现。已有连接缺少新权限时刷新原授权，不另建连接。
